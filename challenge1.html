@@ -10,14 +10,24 @@
         <h1>Coding Challenge #1 (EASY)</h1>
         
         <script>    
-          
-            var string = "Trout like to eat toast when they see a kayak";    // string container, can be changed to anything
-            var stringSplit = string.split(" ");                            // splits the string into an array giving each word a numeric position
-            var i = 0;                                                     // counter variable
-            var box = "";                                                 // container for words that start and end with the same character
+            "use strict"
+            var string = "Trout like to eat toast when they see a kayak";   // string container, can be changed to anything
+            var stringSplit = string.split(" ");                           // splits the string into an array giving each word a numeric position
+            var i = 0;                                                    // counter variable
+            var box = "";                                                // container for words that start and end with the same character
             
             
             // loop for checking each word to see if the characters match
+            for (i = 0; i < stringSplit.length; i++) {
+                if (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1)) {
+                    box = " / " + stringSplit[i];
+                    document.write(box);
+                    console.log(box.split(" / "));             // splits the contents of box into an array in the console
+                }
+            };
+            
+            
+            /*
             while (i < stringSplit.length) {
                 if (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1)) {
                     box = " / " + stringSplit[i];
@@ -25,9 +35,10 @@
                 }
                 i++;
             };   
-            
+            */
             
             /*
+            // doesn't work
             while ((i < stringSplit.length) && (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1))) {
                 box += " / " + stringSplit[i];
             }
