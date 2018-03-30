@@ -11,11 +11,13 @@
         
         <script>    
           
-            var string = "Trout like to eat toast when they see a kayak";
-            var stringSplit = string.split(" "); 
-            var i = 0;
-            var box = "";
+            var string = "Trout like to eat toast when they see a kayak";    // string container, can be changed to any thing
+            var stringSplit = string.split(" ");                            // splits the string into an array giving each word a numeric position
+            var i = 0;                                                     // counter variable
+            var box = "";                                                 // container for words that start and end with the same character
             
+            
+            // loop for checking each word to see if the characters match
             while (i < stringSplit.length) {
                 if (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1)) {
                     box = " / " + stringSplit[i];
