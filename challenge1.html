@@ -11,40 +11,23 @@
         
         <script>    
             "use strict"
-            var string = "Trout like to eat toast when they see a kayak";   // string container, can be changed to anything
+            var string = "Trout like to eat toast when they see a kayak".toLowerCase();   // string container, can be changed to anything
             var stringSplit = string.split(" ");                           // splits the string into an array giving each word a numeric position
-            var i = 0;                                                    // counter variable
-            var box = "";                                                // container for words that start and end with the same character
+            var j = 0;                                                    // counter variable
+            var box = [];                                                // container for words that start and end with the same character
             
             
             // loop for checking each word to see if the characters match
-            for (i = 0; i < stringSplit.length; i++) {
-                if (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1)) {
-                    box = " / " + stringSplit[i];
-                    document.write(box);
-                    console.log(box.split(" / "));             // splits the contents of box into an array in the console
-                }
+            for (var i = 0; i < stringSplit.length; i++) {
+                if (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1)) { // checks first character with last character
+                    box[j++] = stringSplit[i];                                                   // if same, adds word to array 
+                } 
             };
             
+            // output for how many are the same and what those words are
+            document.write("The string has " + box.length + " words with starting and ending with the same character. <br>");
+            document.write("<br> The words are: " + "(" + box + ")");
             
-            /*
-            while (i < stringSplit.length) {
-                if (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1)) {
-                    box = " / " + stringSplit[i];
-                    document.write(box);
-                }
-                i++;
-            };   
-            */
-            
-            /*
-            // doesn't work
-            while ((i < stringSplit.length) && (stringSplit[i].charAt(0) == stringSplit[i].charAt(stringSplit[i].length-1))) {
-                box += " / " + stringSplit[i];
-            }
-            i++;
-            document.write(box);
-            */
         </script>
     </body>
 </html>
